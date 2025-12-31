@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Pondatti ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: url('bg.jpg') no-repeat center center/cover;
+  color: white;
+}
+
+/* Lock Screen */
+#lockScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+#lockScreen h2 {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  background: pink;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#error {
+  color: #ffb3b3;
+  margin-top: 10px;
+}
+
+/* Letter Screen */
+#letterScreen {
+  display: none;
+  height: 100vh;
+  overflow-y: auto;
+  backdrop-filter: blur(6px);
+}
+
+.letter {
+  background: rgba(0,0,0,0.55);
+  margin: 30px;
+  padding: 25px;
+  border-radius: 20px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+<div id="lockScreen">
+  <h2>🔐 Enter Password</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Open ❤️</button>
+  <p id="error"></p>
+</div>
+
+<!-- LETTER PAGE -->
+<div id="letterScreen">
+  <audio id="bgMusic" src="song.mp3" loop></audio>
+
+  <div class="letter">
+Dear loved one ❣️  
+Happy new year💟💌  
+
+Indha puthu varusham start aagumbodhe  
+En manasula first varradhu nee dhaan pondatti ❤️  
+En life odaa best blessing nee dhaan pondatti🥰  
+
+Kadantha varusham la namma sandhosham, kashtam,  
+ellathayum serndhu face pannom 🤍  
+Aana ellathukum mela namma love strong aayitte pochu 🥹  
+
+Nee sirikkumbodhu en life light aagudhu  
+nee kashtapattal en manasu udaindhudum 😔  
+
+Indha varusham un kanavu ellam niraivera  
+naan eppovum un pakkathula iruppen nu promise 🤞  
+
+Nee irundha podhum,  
+indha ulagathula enakku vera edhuvum venam 💖  
+
+En vaazhkai-oda azhagana gift nee dhaan pondatti 😘  
+
+En life-la naan romba strong nu ninaikkiren  
+aana adhu un kai en kaiya pidichirukkaradhaal dhaan 🤍  
+
+New Year na calendar maathradhu illa,  
+Un kooda innum oru varusham memories create pannradhu 😄❤️  
+
+Always with you pondatti 💎🫂
+  </div>
+</div>
+
+<script>
+function checkPassword() {
+  const pass = document.getElementById("password").value;
+  const correctPassword = "pondatti"; // CHANGE PASSWORD HERE
+
+  if (pass === correctPassword) {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("letterScreen").style.display = "block";
+    document.getElementById("bgMusic").play();
+  } else {
+    document.getElementById("error").innerText = "Wrong password 😢";
+  }
+}
+</script>
+
+</body>
+</html>
